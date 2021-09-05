@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="photoswipe/dist/photoswipe.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="photoswipe/dist/photoswipe.css">
     <link rel="stylesheet" type="text/css" href="photoswipe/dist/default-skin/default-skin.css">
     <title>quigley and friends</title>
 </head>
+
 <body>
 
-    <h1>quigley and friends</h1>
+    <h1 class="display-1 text-center">quigley and friends</h1>
+
+    <img class="comic" src="images/plus_one.jpg" alt="plus one" style="width: 500px; height: 500px">
+    <img class="comic" src="images/walking_distance.jpg" alt="plus one" style="width: 475px; height: 300px">
+    <img class="comic" src="images/you_ever_see_totoro.jpg" alt="plus one" style="width: 500px; height: 500px">
+    <img class="comic" src="images/you_have_only_but_to_ask.jpg" alt="plus one" style="width: 500px; height: 500px">
 
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -26,7 +34,7 @@
             <!-- Container that holds slides. 
                 PhotoSwipe keeps only 3 of them in the DOM to save memory.
                 Don't modify these 3 pswp__item elements, data is added later on. -->
-              <div class="pswp__container">
+            <div class="pswp__container">
                 <div class="pswp__item"></div>
                 <div class="pswp__item"></div>
                 <div class="pswp__item"></div>
@@ -34,19 +42,12 @@
 
             <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
             <div class="pswp__ui pswp__ui--hidden">
-
                 <div class="pswp__top-bar">
-
                     <!--  Controls are self-explanatory. Order can be changed. -->
-
                     <div class="pswp__counter"></div>
-
                     <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
                     <button class="pswp__button pswp__button--share" title="Share"></button>
-
                     <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
                     <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
                     <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
@@ -61,7 +62,7 @@
                 </div>
 
                 <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div> 
+                    <div class="pswp__share-tooltip"></div>
                 </div>
 
                 <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
@@ -77,39 +78,13 @@
         </div>
     </div>
 
-    
-    <script src="photoswipe/dist/photoswipe.min.js"></script> 
+    <script src="photoswipe/dist/photoswipe.min.js"></script>
     <script src="photoswipe/dist/photoswipe-ui-default.min.js"></script>
-    <script>
-        var pswpElement = document.querySelectorAll('.pswp')[0];
+    <script src="js/gallery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
 
-        // build items array
-        var items = [
-            {
-                src: 'images/plus_one.jpg',
-                w: 2048,
-                h: 2048
-            },
-            {
-                src: 'images/walking_distance.jpg',
-                w: 3800,
-                h: 2400
-            }
-        ];  
-
-        // define options (if needed)
-        var options = {
-        // optionName: 'option value'
-        // for example:
-        index: 0 // start at first slide
-        };
-
-        // Initializes and opens PhotoSwipe
-        var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
-
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    
 </body>
+
 </html>
