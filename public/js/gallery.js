@@ -1,5 +1,11 @@
 var pswpElement = document.querySelectorAll('.pswp')[0];
 
+/*
+async function fetchImages() {
+    const resp = await fetch("/images")
+}
+*/
+
 // build items array
 var items = [
     {
@@ -23,12 +29,11 @@ var options = {
     index: 0 // start at first slide
 };
 
-// Initializes and opens PhotoSwipe
-var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-
 comics = document.querySelectorAll(".comic");
 for (i=0; i < comics.length; i++){
     comics[i].addEventListener("click", () => {
+        // Initializes and opens PhotoSwipe
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.init();
         console.log("clicked")
     })
