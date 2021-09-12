@@ -38,15 +38,17 @@ app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/js", express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "public/images")))
+app.use("/css", express.static(path.join(__dirname, "public/css")))
 app.use(express.static(path.join(__dirname, "node_modules")))
 
-app.get("/", (req, res) => {
-    res.render("index.ejs", {root: __dirname})
+app.get("/", async (req, res) => {
+    items = await getImageJSON();
+    res.render("index.ejs", {root: __dirname, images: items})
 })
 
 app.get("/images", async (req, res) => {
     items = await getImageJSON()
-    res.json( items[0] )
+    res.json( JSON.stringify(items) )
 })
 
 app.listen(port, () => {

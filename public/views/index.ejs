@@ -9,6 +9,7 @@
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="photoswipe/dist/photoswipe.css">
     <link rel="stylesheet" type="text/css" href="photoswipe/dist/default-skin/default-skin.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>quigley and friends</title>
 </head>
 
@@ -16,10 +17,17 @@
 
     <h1 class="display-1 text-center">quigley and friends</h1>
 
-    <img class="comic" src="images/plus_one.jpg" alt="plus one" style="width: 500px; height: 500px">
-    <img class="comic" src="images/walking_distance.jpg" alt="plus one" style="width: 475px; height: 300px">
-    <img class="comic" src="images/you_ever_see_totoro.jpg" alt="plus one" style="width: 500px; height: 500px">
-    <img class="comic" src="images/you_have_only_but_to_ask.jpg" alt="plus one" style="width: 500px; height: 500px">
+    <div class="container">
+        <% for (let i=0; i < images.length; i++) { %>
+            <div class="row justify-content-center">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <img class="comic" src="<%= images[i].src %>" alt="<%= images[i].title %>">
+                </div>
+                <div class="col-1"></div>
+            </div>
+            <% } %>
+    </div>
 
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
