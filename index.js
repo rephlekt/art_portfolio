@@ -46,11 +46,6 @@ app.get("/", async (req, res) => {
     res.render("index.ejs", {root: __dirname, images: items})
 })
 
-app.get("/images", async (req, res) => {
-    items = await getImageJSON()
-    res.json( JSON.stringify(items) )
-})
-
 app.listen(port, () => {
     console.log(`listening on ${port}`)
 })

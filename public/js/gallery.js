@@ -1,32 +1,13 @@
 var pswpElement = document.querySelectorAll('.pswp')[0];
 
-/*
-async function fetchImages() {
-    const resp = await fetch("/images")
-}
-*/
-
 // build items array
-var items = [
-    {
-        src: 'images/plus_one.jpg',
-        w: 2048,
-        h: 2048,
-        title: "plus one"
-    },
-    {
-        src: 'images/walking_distance.jpg',
-        w: 3800,
-        h: 2400,
-        title: "walking distance"
-    }
-];
+var items = JSON.parse(document.getElementById("gallery_script").textContent);
 
 // define options (if needed)
 var options = {
     // optionName: 'option value'
     // for example:
-    index: 0 // start at first slide
+    //index: 0 // start at first slide
 };
 
 comics = document.querySelectorAll(".comic");
