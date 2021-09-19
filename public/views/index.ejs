@@ -16,14 +16,20 @@
 <body>
 
     <!-- h1 class="display-1 text-center">quigley street</h1> -->
-    <img src="images/header.png">
-
     <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <img class="col-6 img-fluid" src="images/header.png">
+            <div class="col-3"></div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
         <% for (let i=0; i < images.length; i++) { %>
             <div class="row justify-content-center">
                 <div class="col-1"></div>
                 <div class="col-10">
-                    <img class="comic d-block mx-auto p-5 img-fluid" src="<%= images[i].src %>" alt="<%= images[i].title %>">
+                    <img class="comic d-block mx-auto p-2 img-fluid" src="<%= images[i].src %>" alt="<%= images[i].title %>">
                 </div>
                 <div class="col-1"></div>
             </div>

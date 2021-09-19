@@ -10,23 +10,25 @@ const port = 3000
 async function getImageJSON(){
     items = []
     try{
-        const { stdout, stderr } = await exec("ls -l " + path.join(__dirname, "public/images/") + " | cut -d' ' -f 10")
-        console.log(stdout)
+        const { stdout, stderr } = await exec("ls -l " + path.join(__dirname, "public/images/*.jpg") + " | tr -s ' ' | cut -d' ' -f 9")
+        
         let lines = stdout.split("\n").filter( item=>item )
-
+        
         for (let i = 0; i < lines.length; i++){
 
             //lines[i] not converting right, look at this later
-            const{ stdout, stderr } = await exec("identify -format '%w %h' public/images/" + lines[i])
+            const{ stdout, stderr } = await exec("identify -format '%w %h' " + lines[i])
 
+            let image_filename=lines[i].split("/")[6]
             let image_info = {
-                src: "images/" + lines[i],
+                src: "images/" + image_filename,
                 w: stdout.split(" ")[0],
                 h: stdout.split(" ")[1],
-                title: lines[i].split(".")[0].replaceAll("_", " ")
+                title: image_filename.split(".")[0].replaceAll("_", " ")
             }
             items.push(image_info)   
         }
+        console.log("item0 info: " + items[0].src)
         return items
     }
     catch(e){
