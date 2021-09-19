@@ -11,10 +11,12 @@ async function getImageJSON(){
     items = []
     try{
         const { stdout, stderr } = await exec("ls -l " + path.join(__dirname, "public/images/") + " | cut -d' ' -f 10")
+        console.log(stdout)
         let lines = stdout.split("\n").filter( item=>item )
 
         for (let i = 0; i < lines.length; i++){
 
+            //lines[i] not converting right, look at this later
             const{ stdout, stderr } = await exec("identify -format '%w %h' public/images/" + lines[i])
 
             let image_info = {
