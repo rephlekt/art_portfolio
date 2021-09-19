@@ -3,3 +3,8 @@
     max-height: 100vh;
     object-fit:scale-down;
 }
+
+.header-img{
+    width: 15vw;
+    object-fit:scale-down;
+}

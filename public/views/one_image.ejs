@@ -1,0 +1,17 @@
+    <%- include("partials/header") %>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-1">
+                <a class="btn btn-primary" href="/<%= image.path %>/back">Back</a>
+            </div>
+            <div class="col-10">
+                <img class="comic d-block mx-auto p-2 img-fluid" src="<%= image.src %>" alt="<%= image.title %>">
+            </div>
+            <div class="col-1">
+                <a class="btn btn-primary" href="/<%= image.path %>/forward">Forward</a>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer") %>
