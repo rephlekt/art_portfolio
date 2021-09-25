@@ -1,10 +1,15 @@
 .comic{
-    max-width: 75vw;
-    max-height: 100vh;
+    /* max-width: 75vw; */
+    max-height: 100vh; 
     object-fit:scale-down;
 }
 
 .header-img{
     width: 15vw;
     object-fit:scale-down;
+}
+
+.buttons{
+    max-width: 20vw;
+    object-fit: scale-down;
 }

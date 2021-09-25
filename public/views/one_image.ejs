@@ -2,16 +2,42 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-1">
-                <a class="btn btn-primary" href="/<%= image.path %>/back">Back</a>
+            <div class="col-2 d-flex align-items-center">
+                <a class="buttons" href="/<%= image.path %>/back">
+                    <img class="img-fluid" id="backButton" src="images/back_green.png" alt="back button">
+                </a>
             </div>
-            <div class="col-10">
-                <img class="comic d-block mx-auto p-2 img-fluid" src="<%= image.src %>" alt="<%= image.title %>">
+            <div class="col-8 align-items-center">
+                <img class="comic d-block mx-auto img-fluid" src="<%= image.src %>" alt="<%= image.title %>">
             </div>
-            <div class="col-1">
-                <a class="btn btn-primary" href="/<%= image.path %>/forward">Forward</a>
+            <div class="col-2 d-flex align-items-center">
+                <a class="buttons" href="/<%= image.path %>/forward">
+                    <img class="img-fluid" id="forwardButton" src="images/forward_red.png" alt="forward button">
+                </a>
             </div>
         </div>
     </div>
+
+    <script>
+        let back_elem = document.getElementById("backButton");
+        back_elem.addEventListener("mouseover", () => {
+            console.log("mouseover");
+            document.getElementById("backButton").src = "images/back_purple.png";
+        })
+        back_elem.addEventListener("mouseout", () => {
+            console.log("mouseout");
+            document.getElementById("backButton").src = "images/back_green.png";
+        })
+
+        let forward_elem = document.getElementById("forwardButton");
+        forward_elem.addEventListener("mouseover", () => {
+            console.log("mouseover");
+            document.getElementById("forwardButton").src = "images/forward_blue.png";
+        })
+        forward_elem.addEventListener("mouseout", () => {
+            console.log("mouseout");
+            document.getElementById("forwardButton").src = "images/forward_red.png";
+        })
+    </script>
 
     <%- include("partials/footer") %>
